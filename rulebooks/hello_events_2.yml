@@ -6,7 +6,7 @@
         limit: 5
   rules:
     - name: Say Hello
-      condition: event.i == 1
+      condition: event.i == 2
       action:
         run_playbook:
           name: ansible.eda.hello
