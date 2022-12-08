@@ -6,3 +6,4 @@ all:
     webservers:
       hosts:
         foo.example.com:
+        bar.example.com:

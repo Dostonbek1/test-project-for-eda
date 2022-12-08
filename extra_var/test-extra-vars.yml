@@ -1,2 +1,2 @@
 warn_list:
-  - experimental
+  - experimental  # all rules tagged as experimental
