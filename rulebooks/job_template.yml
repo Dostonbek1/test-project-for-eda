@@ -30,7 +30,7 @@
           fact:
             name: fred
     - name: retract_fact
-      condition: event.message == "hello world"
+      condition: event.message == "hi world"
       action:
         retract_fact:
           fact:
