@@ -47,3 +47,9 @@
       action:
         debug:
           msg: Event 4th matched
+    - name: Rule 5
+      condition: event.i >= 5 
+      action:
+        debug:
+          msg: Event is greater than 5
+          
