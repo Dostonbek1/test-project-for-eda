@@ -12,9 +12,9 @@
       actions:
         - run_job_template:
           organization: Default
-          name: "hk-shared-jt"
+          name: "Demo Job Template"
           job_args:
             extra_vars:
-              job_template_name: "hk-shared-jt"
+              job_template_name: "Demo Job Template"
         - print_event:
             pretty: true
