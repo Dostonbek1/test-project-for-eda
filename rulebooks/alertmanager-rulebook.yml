@@ -8,7 +8,7 @@
         port: 5000
   rules:
     - name: server down
-      condition: event.alert.labels.job == "server" or event.alert.status == "firing"
+      condition: event.payload.status == "firing"
       actions:
         - run_job_template:
           organization: Default
