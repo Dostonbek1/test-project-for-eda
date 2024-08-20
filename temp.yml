@@ -1,0 +1,447 @@
+2024-08-20 15:53:30,614 Creating Job
+2024-08-20 15:53:30,614 Image URL is quay.io/ansible/ansible-rulebook:main
+2024-08-20 15:53:30,616 Container args ['--worker', '--websocket-ssl-verify', 'False', '--websocket-url', 'ws://aap-hackathon-5-eda-daphne:8001/api/eda/ws/ansible-rulebook', '--websocket-access-token', '******', '--websocket-refresh-token', '******', '--websocket-token-url', 'http://aap-hackathon-5-eda-api:8000/api/eda/v1/auth/token/refresh/', '--id', '248', '--heartbeat', '300']
+2024-08-20 15:53:31,716 Job activation-job-28-248 is running
+2024-08-20 15:54:22,632 - ansible_rulebook.rule_set_runner - ERROR - KeyError 'name' with variables {'event': {'meta': {'eda_webhook_name': 'Alertmanager',
+                    'endpoint': '/api/eda/v1/external_webhook/8d0543b9-5e6a-415d-806c-413c430fef4a/post/',
+                    'headers': {'Accept-Encoding': 'identity',
+                                'Connection': 'close',
+                                'Content-Length': '1502',
+                                'Content-Type': 'application/json',
+                                'Forwarded': 'for=35.241.237.39;host=aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com;proto=https',
+                                'Host': 'aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com',
+                                'User-Agent': 'ansible-httpget',
+                                'X-Envoy-Expected-Rq-Timeout-Ms': '30000',
+                                'X-Envoy-External-Address': '10.128.2.8',
+                                'X-Envoy-Original-Path': '/api/eda/v1/external_webhook/8d0543b9-5e6a-415d-806c-413c430fef4a/post/',
+                                'X-Forwarded-For': '35.241.237.39,10.128.2.8, '
+                                                   '10.128.9.16',
+                                'X-Forwarded-Host': 'aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com',
+                                'X-Forwarded-Port': '8000',
+                                'X-Forwarded-Proto': 'http',
+                                'X-Request-Id': 'd0ef88ac-2d54-4659-9a82-99d5470cd73f',
+                                'X-Trusted-Proxy': '1724169262410714010-b7bb4d9a03b97bb6f6505387b5740b5bac207bded488837d0a73aa6fdcba8bac0f126f4925b1ff73adc1c4117bb97c498629cdd79f158b18d03709ab1dab7b4b2b8b187560452ed0e2513d6d90a37d6aa2dc5d831fda3b654aab35a51470764f06458888d965695d411189f5a1283f63d4900bc0cb30c5d068153b2b25e19ecb28903300f7e23be0fc79d60742c30345fec8432fc23a2d7c82b74c2300d2c06698e33b3c793d16fa0206e8d66a0e3fd933b034faa30842062be5cd6227e49ddca0e4a7c5bc4f0320035adb1b3410c2c3400f08a6ff7931089636b56c9ddce3698afb3712e01f2ba4dc06b3dbf4ad06207c43cc1fc56e81c096958c86b895e80c'},
+                    'received_at': '2024-08-20T15:54:22.594048Z',
+                    'source': {'name': 'Alertmanager',
+                               'type': 'ansible.eda.pg_listener'},
+                    'uuid': '288035b7-882e-48a7-be2b-0fe225fa7171'},
+           'payload': {'alerts': [{'annotations': {'message': 'This is an '
+                                                              'example alert '
+                                                              'for the '
+                                                              'hackathon.'},
+                                   'endsAt': '0001-01-01T00:00:00Z',
+                                   'fingerprint': '9b20176f470ed9e4',
+                                   'generatorURL': 'https://thanos-querier-openshift-monitoring.apps.hackathon.ocp4.testing.ansible.com/api/graph?g0.expr=kube_job_status_failed%7Bjob_name%3D%22prometheus-hackathon-app%22%2Cnamespace%3D%22eda-hackathon-fakeapp%22%7D+%3E+0&g0.tab=1',
+                                   'labels': {'alertname': 'HackathonAlert',
+                                              'container': 'kube-rbac-proxy-main',
+                                              'endpoint': 'https-main',
+                                              'job': 'server',
+                                              'job_name': 'prometheus-hackathon-app',
+                                              'namespace': 'eda-hackathon-fakeapp',
+                                              'prometheus': 'openshift-monitoring/k8s',
+                                              'reason': 'DeadlineExceeded',
+                                              'service': 'kube-state-metrics',
+                                              'severity': 'warning'},
+                                   'startsAt': '2024-08-19T21:20:57.552Z',
+                                   'status': 'firing'}],
+                       'commonAnnotations': {'message': 'This is an example '
+                                                        'alert for the '
+                                                        'hackathon.'},
+                       'commonLabels': {'alertname': 'HackathonAlert',
+                                        'container': 'kube-rbac-proxy-main',
+                                        'endpoint': 'https-main',
+                                        'job': 'kube-state-metrics',
+                                        'job_name': 'prometheus-hackathon-app',
+                                        'namespace': 'eda-hackathon-fakeapp',
+                                        'prometheus': 'openshift-monitoring/k8s',
+                                        'reason': 'DeadlineExceeded',
+                                        'service': 'kube-state-metrics',
+                                        'severity': 'warning'},
+                       'externalURL': 'https://console-openshift-console.apps.hackathon.ocp4.testing.ansible.com/monitoring',
+                       'groupKey': '{}/{namespace="eda-hackathon-fakeapp"}:{severity="warning"}',
+                       'groupLabels': {'severity': 'warning'},
+                       'receiver': 'eda-hackathon-fakeapp/example-routing/receiver0001',
+                       'status': 'firing',
+                       'truncatedAlerts': 0,
+                       'version': '4'}}}
+
+** 2024-08-20 15:54:22.633061 [event] ******************************************
+{'meta': {'eda_webhook_name': 'Alertmanager',
+          'endpoint': '/api/eda/v1/external_webhook/8d0543b9-5e6a-415d-806c-413c430fef4a/post/',
+          'headers': {'Accept-Encoding': 'identity',
+                      'Connection': 'close',
+                      'Content-Length': '1502',
+                      'Content-Type': 'application/json',
+                      'Forwarded': 'for=35.241.237.39;host=aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com;proto=https',
+                      'Host': 'aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com',
+                      'User-Agent': 'ansible-httpget',
+                      'X-Envoy-Expected-Rq-Timeout-Ms': '30000',
+                      'X-Envoy-External-Address': '10.128.2.8',
+                      'X-Envoy-Original-Path': '/api/eda/v1/external_webhook/8d0543b9-5e6a-415d-806c-413c430fef4a/post/',
+                      'X-Forwarded-For': '35.241.237.39,10.128.2.8, '
+                                         '10.128.9.16',
+                      'X-Forwarded-Host': 'aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com',
+                      'X-Forwarded-Port': '8000',
+                      'X-Forwarded-Proto': 'http',
+                      'X-Request-Id': 'd0ef88ac-2d54-4659-9a82-99d5470cd73f',
+                      'X-Trusted-Proxy': '1724169262410714010-b7bb4d9a03b97bb6f6505387b5740b5bac207bded488837d0a73aa6fdcba8bac0f126f4925b1ff73adc1c4117bb97c498629cdd79f158b18d03709ab1dab7b4b2b8b187560452ed0e2513d6d90a37d6aa2dc5d831fda3b654aab35a51470764f06458888d965695d411189f5a1283f63d4900bc0cb30c5d068153b2b25e19ecb28903300f7e23be0fc79d60742c30345fec8432fc23a2d7c82b74c2300d2c06698e33b3c793d16fa0206e8d66a0e3fd933b034faa30842062be5cd6227e49ddca0e4a7c5bc4f0320035adb1b3410c2c3400f08a6ff7931089636b56c9ddce3698afb3712e01f2ba4dc06b3dbf4ad06207c43cc1fc56e81c096958c86b895e80c'},
+          'received_at': '2024-08-20T15:54:22.594048Z',
+          'source': {'name': 'Alertmanager', 'type': 'ansible.eda.pg_listener'},
+          'uuid': '288035b7-882e-48a7-be2b-0fe225fa7171'},
+ 'payload': {'alerts': [{'annotations': {'message': 'This is an example alert '
+                                                    'for the hackathon.'},
+                         'endsAt': '0001-01-01T00:00:00Z',
+                         'fingerprint': '9b20176f470ed9e4',
+                         'generatorURL': 'https://thanos-querier-openshift-monitoring.apps.hackathon.ocp4.testing.ansible.com/api/graph?g0.expr=kube_job_status_failed%7Bjob_name%3D%22prometheus-hackathon-app%22%2Cnamespace%3D%22eda-hackathon-fakeapp%22%7D+%3E+0&g0.tab=1',
+                         'labels': {'alertname': 'HackathonAlert',
+                                    'container': 'kube-rbac-proxy-main',
+                                    'endpoint': 'https-main',
+                                    'job': 'server',
+                                    'job_name': 'prometheus-hackathon-app',
+                                    'namespace': 'eda-hackathon-fakeapp',
+                                    'prometheus': 'openshift-monitoring/k8s',
+                                    'reason': 'DeadlineExceeded',
+                                    'service': 'kube-state-metrics',
+                                    'severity': 'warning'},
+                         'startsAt': '2024-08-19T21:20:57.552Z',
+                         'status': 'firing'}],
+             'commonAnnotations': {'message': 'This is an example alert for '
+                                              'the hackathon.'},
+             'commonLabels': {'alertname': 'HackathonAlert',
+                              'container': 'kube-rbac-proxy-main',
+                              'endpoint': 'https-main',
+                              'job': 'kube-state-metrics',
+                              'job_name': 'prometheus-hackathon-app',
+                              'namespace': 'eda-hackathon-fakeapp',
+                              'prometheus': 'openshift-monitoring/k8s',
+                              'reason': 'DeadlineExceeded',
+                              'service': 'kube-state-metrics',
+                              'severity': 'warning'},
+             'externalURL': 'https://console-openshift-console.apps.hackathon.ocp4.testing.ansible.com/monitoring',
+             'groupKey': '{}/{namespace="eda-hackathon-fakeapp"}:{severity="warning"}',
+             'groupLabels': {'severity': 'warning'},
+             'receiver': 'eda-hackathon-fakeapp/example-routing/receiver0001',
+             'status': 'firing',
+             'truncatedAlerts': 0,
+             'version': '4'}}
+********************************************************************************
+2024-08-20 15:59:01,193 - ansible_rulebook.rule_set_runner - ERROR - KeyError 'name' with variables {'event': {'meta': {'eda_webhook_name': 'Alertmanager',
+                    'endpoint': '/api/eda/v1/external_webhook/8d0543b9-5e6a-415d-806c-413c430fef4a/post/',
+                    'headers': {'Accept-Encoding': 'identity',
+                                'Connection': 'close',
+                                'Content-Length': '1502',
+                                'Content-Type': 'application/json',
+                                'Forwarded': 'for=35.241.237.39;host=aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com;proto=https',
+                                'Host': 'aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com',
+                                'User-Agent': 'ansible-httpget',
+                                'X-Envoy-Expected-Rq-Timeout-Ms': '30000',
+                                'X-Envoy-External-Address': '10.131.0.5',
+                                'X-Envoy-Original-Path': '/api/eda/v1/external_webhook/8d0543b9-5e6a-415d-806c-413c430fef4a/post/',
+                                'X-Forwarded-For': '35.241.237.39,10.131.0.5, '
+                                                   '10.128.9.16',
+                                'X-Forwarded-Host': 'aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com',
+                                'X-Forwarded-Port': '8000',
+                                'X-Forwarded-Proto': 'http',
+                                'X-Request-Id': '381af46f-ab4b-414f-87ba-61016297a3e7',
+                                'X-Trusted-Proxy': '1724169541011151200-90e03d8d35e20c77aa6a291e120cb7a30f78a5d234e50e4bdc05b454efb7d42f0d802f1375ced2d1aa40f4035b726d60b9e2e44cebd00fe30dbe9f545259d1216839b68c5074d7c5b7793195403fb54db70281bdaef980fc2360209968460c6950a7b46fbe566ffb17fb66807c5577d0df2c2e394478ea0d256a3754ff3c724aaf918f8e1f8552bd63b02cbfebd8b9716ca82418ec1b8a376d75e546d80808e419354c856bffb29e17d2a9b1769f8779892b1ab820b9da93f97528b2e552b0bbe0bd824995f113a1d3a466bfe14a802b08143e1ffae05cf8f1a2fe4cc518c5094b5ecea4775b484f903427d90831bd6ced599a87fb430cc9b56aca5594914301'},
+                    'received_at': '2024-08-20T15:59:01.189325Z',
+                    'source': {'name': 'Alertmanager',
+                               'type': 'ansible.eda.pg_listener'},
+                    'uuid': '32328737-1124-4b27-acd1-a6cafa07e98a'},
+           'payload': {'alerts': [{'annotations': {'message': 'This is an '
+                                                              'example alert '
+                                                              'for the '
+                                                              'hackathon.'},
+                                   'endsAt': '0001-01-01T00:00:00Z',
+                                   'fingerprint': '9b20176f470ed9e4',
+                                   'generatorURL': 'https://thanos-querier-openshift-monitoring.apps.hackathon.ocp4.testing.ansible.com/api/graph?g0.expr=kube_job_status_failed%7Bjob_name%3D%22prometheus-hackathon-app%22%2Cnamespace%3D%22eda-hackathon-fakeapp%22%7D+%3E+0&g0.tab=1',
+                                   'labels': {'alertname': 'HackathonAlert',
+                                              'container': 'kube-rbac-proxy-main',
+                                              'endpoint': 'https-main',
+                                              'job': 'server',
+                                              'job_name': 'prometheus-hackathon-app',
+                                              'namespace': 'eda-hackathon-fakeapp',
+                                              'prometheus': 'openshift-monitoring/k8s',
+                                              'reason': 'DeadlineExceeded',
+                                              'service': 'kube-state-metrics',
+                                              'severity': 'warning'},
+                                   'startsAt': '2024-08-19T21:20:57.552Z',
+                                   'status': 'firing'}],
+                       'commonAnnotations': {'message': 'This is an example '
+                                                        'alert for the '
+                                                        'hackathon.'},
+                       'commonLabels': {'alertname': 'HackathonAlert',
+                                        'container': 'kube-rbac-proxy-main',
+                                        'endpoint': 'https-main',
+                                        'job': 'kube-state-metrics',
+                                        'job_name': 'prometheus-hackathon-app',
+                                        'namespace': 'eda-hackathon-fakeapp',
+                                        'prometheus': 'openshift-monitoring/k8s',
+                                        'reason': 'DeadlineExceeded',
+                                        'service': 'kube-state-metrics',
+                                        'severity': 'warning'},
+                       'externalURL': 'https://console-openshift-console.apps.hackathon.ocp4.testing.ansible.com/monitoring',
+                       'groupKey': '{}/{namespace="eda-hackathon-fakeapp"}:{severity="warning"}',
+                       'groupLabels': {'severity': 'warning'},
+                       'receiver': 'eda-hackathon-fakeapp/example-routing/receiver0001',
+                       'status': 'firing',
+                       'truncatedAlerts': 0,
+                       'version': '4'}}}
+
+** 2024-08-20 15:59:01.193697 [event] ******************************************
+{'meta': {'eda_webhook_name': 'Alertmanager',
+          'endpoint': '/api/eda/v1/external_webhook/8d0543b9-5e6a-415d-806c-413c430fef4a/post/',
+          'headers': {'Accept-Encoding': 'identity',
+                      'Connection': 'close',
+                      'Content-Length': '1502',
+                      'Content-Type': 'application/json',
+                      'Forwarded': 'for=35.241.237.39;host=aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com;proto=https',
+                      'Host': 'aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com',
+                      'User-Agent': 'ansible-httpget',
+                      'X-Envoy-Expected-Rq-Timeout-Ms': '30000',
+                      'X-Envoy-External-Address': '10.131.0.5',
+                      'X-Envoy-Original-Path': '/api/eda/v1/external_webhook/8d0543b9-5e6a-415d-806c-413c430fef4a/post/',
+                      'X-Forwarded-For': '35.241.237.39,10.131.0.5, '
+                                         '10.128.9.16',
+                      'X-Forwarded-Host': 'aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com',
+                      'X-Forwarded-Port': '8000',
+                      'X-Forwarded-Proto': 'http',
+                      'X-Request-Id': '381af46f-ab4b-414f-87ba-61016297a3e7',
+                      'X-Trusted-Proxy': '1724169541011151200-90e03d8d35e20c77aa6a291e120cb7a30f78a5d234e50e4bdc05b454efb7d42f0d802f1375ced2d1aa40f4035b726d60b9e2e44cebd00fe30dbe9f545259d1216839b68c5074d7c5b7793195403fb54db70281bdaef980fc2360209968460c6950a7b46fbe566ffb17fb66807c5577d0df2c2e394478ea0d256a3754ff3c724aaf918f8e1f8552bd63b02cbfebd8b9716ca82418ec1b8a376d75e546d80808e419354c856bffb29e17d2a9b1769f8779892b1ab820b9da93f97528b2e552b0bbe0bd824995f113a1d3a466bfe14a802b08143e1ffae05cf8f1a2fe4cc518c5094b5ecea4775b484f903427d90831bd6ced599a87fb430cc9b56aca5594914301'},
+          'received_at': '2024-08-20T15:59:01.189325Z',
+          'source': {'name': 'Alertmanager', 'type': 'ansible.eda.pg_listener'},
+          'uuid': '32328737-1124-4b27-acd1-a6cafa07e98a'},
+ 'payload': {'alerts': [{'annotations': {'message': 'This is an example alert '
+                                                    'for the hackathon.'},
+                         'endsAt': '0001-01-01T00:00:00Z',
+                         'fingerprint': '9b20176f470ed9e4',
+                         'generatorURL': 'https://thanos-querier-openshift-monitoring.apps.hackathon.ocp4.testing.ansible.com/api/graph?g0.expr=kube_job_status_failed%7Bjob_name%3D%22prometheus-hackathon-app%22%2Cnamespace%3D%22eda-hackathon-fakeapp%22%7D+%3E+0&g0.tab=1',
+                         'labels': {'alertname': 'HackathonAlert',
+                                    'container': 'kube-rbac-proxy-main',
+                                    'endpoint': 'https-main',
+                                    'job': 'server',
+                                    'job_name': 'prometheus-hackathon-app',
+                                    'namespace': 'eda-hackathon-fakeapp',
+                                    'prometheus': 'openshift-monitoring/k8s',
+                                    'reason': 'DeadlineExceeded',
+                                    'service': 'kube-state-metrics',
+                                    'severity': 'warning'},
+                         'startsAt': '2024-08-19T21:20:57.552Z',
+                         'status': 'firing'}],
+             'commonAnnotations': {'message': 'This is an example alert for '
+                                              'the hackathon.'},
+             'commonLabels': {'alertname': 'HackathonAlert',
+                              'container': 'kube-rbac-proxy-main',
+                              'endpoint': 'https-main',
+                              'job': 'kube-state-metrics',
+                              'job_name': 'prometheus-hackathon-app',
+                              'namespace': 'eda-hackathon-fakeapp',
+                              'prometheus': 'openshift-monitoring/k8s',
+                              'reason': 'DeadlineExceeded',
+                              'service': 'kube-state-metrics',
+                              'severity': 'warning'},
+             'externalURL': 'https://console-openshift-console.apps.hackathon.ocp4.testing.ansible.com/monitoring',
+             'groupKey': '{}/{namespace="eda-hackathon-fakeapp"}:{severity="warning"}',
+             'groupLabels': {'severity': 'warning'},
+             'receiver': 'eda-hackathon-fakeapp/example-routing/receiver0001',
+             'status': 'firing',
+             'truncatedAlerts': 0,
+             'version': '4'}}
+********************************************************************************
+2024-08-20 16:01:15,842 - ansible_rulebook.rule_set_runner - ERROR - KeyError 'name' with variables {'event': {'meta': {'eda_webhook_name': 'Alertmanager',
+                    'endpoint': '/api/eda/v1/external_webhook/8d0543b9-5e6a-415d-806c-413c430fef4a/post/',
+                    'headers': {'Accept-Encoding': 'gzip',
+                                'Connection': 'close',
+                                'Content-Length': '2878',
+                                'Content-Type': 'application/json',
+                                'Forwarded': 'for=35.241.237.39;host=aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com;proto=https',
+                                'Host': 'aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com',
+                                'User-Agent': 'Alertmanager/0.25.0',
+                                'X-Envoy-Expected-Rq-Timeout-Ms': '30000',
+                                'X-Envoy-External-Address': '10.131.0.5',
+                                'X-Envoy-Original-Path': '/api/eda/v1/external_webhook/8d0543b9-5e6a-415d-806c-413c430fef4a/post/',
+                                'X-Forwarded-For': '35.241.237.39,10.131.0.5, '
+                                                   '10.128.9.16',
+                                'X-Forwarded-Host': 'aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com',
+                                'X-Forwarded-Port': '8000',
+                                'X-Forwarded-Proto': 'http',
+                                'X-Request-Id': 'a7277a77-02b9-4846-8393-8f93aa3a7397',
+                                'X-Trusted-Proxy': '1724169675646610356-730d2c9f07abfa5993dffcecb02e0f48bb8f457bc653461c75044ed2dd66fda6eadfb4064f0e488fcbd3bb36db1ad161ede2367e1a959a16d9530ac34afb3cb6d3c07517526502b6661835423a651bd4e88cd3ee630418b0b4c9373cdfe3a0add490585868c83c2e9b515dab734e12561cb2329a381d97f2e36b00824d7c004fd03d1a4ac8f7a5e8d956beadc3b61cb3f3e3bcadfa621ac387fad4d52be1e05ee28f456176a797d1b717cf5aae56ab257aeb57b5bbd52df8d393a66b32020019d750fc0114fc1c3a87202391b18c642bd341bb77114ab3c8d403abe33b20cf94b0ef68cbe5f010a5c4ca906cd06407cb8c887617148f93bd1ee19ce7510fb314'},
+                    'received_at': '2024-08-20T16:01:15.838335Z',
+                    'source': {'name': 'Alertmanager',
+                               'type': 'ansible.eda.pg_listener'},
+                    'uuid': 'e7578b28-b0c5-483e-8e10-1bd8cda9baf9'},
+           'payload': {'alerts': [{'annotations': {'description': 'System load '
+                                                                  'per core at '
+                                                                  'hackathon-vdtgk-master-0.c.ansible-tower-engineering.internal '
+                                                                  'has been '
+                                                                  'above 2 for '
+                                                                  'the last 15 '
+                                                                  'minutes, is '
+                                                                  'currently '
+                                                                  'at 4.20.\n'
+                                                                  'This might '
+                                                                  'indicate '
+                                                                  'this '
+                                                                  'instance '
+                                                                  'resources '
+                                                                  'saturation '
+                                                                  'and can '
+                                                                  'cause it '
+                                                                  'becoming '
+                                                                  'unresponsive.\n',
+                                                   'summary': 'System '
+                                                              'saturated, load '
+                                                              'per core is '
+                                                              'very high.'},
+                                   'endsAt': '0001-01-01T00:00:00Z',
+                                   'fingerprint': '2509b703dc167f30',
+                                   'generatorURL': 'https://console-openshift-console.apps.hackathon.ocp4.testing.ansible.com/monitoring/graph?g0.expr=node_load1%7Bjob%3D%22node-exporter%22%7D+%2F+count+without+%28cpu%2C+mode%29+%28node_cpu_seconds_total%7Bjob%3D%22node-exporter%22%2Cmode%3D%22idle%22%7D%29+%3E+2&g0.tab=1',
+                                   'labels': {'alertname': 'NodeSystemSaturation',
+                                              'container': 'kube-rbac-proxy',
+                                              'endpoint': 'https',
+                                              'instance': 'hackathon-vdtgk-master-0.c.ansible-tower-engineering.internal',
+                                              'job': 'node-exporter',
+                                              'namespace': 'openshift-monitoring',
+                                              'openshift_io_alert_source': 'platform',
+                                              'pod': 'node-exporter-z8kbw',
+                                              'prometheus': 'openshift-monitoring/k8s',
+                                              'service': 'node-exporter',
+                                              'severity': 'warning'},
+                                   'startsAt': '2024-08-20T11:35:44.012Z',
+                                   'status': 'firing'},
+                                  {'annotations': {'description': 'The minimum '
+                                                                  'notification '
+                                                                  'failure '
+                                                                  'rate to '
+                                                                  'webhook '
+                                                                  'sent from '
+                                                                  'any '
+                                                                  'instance in '
+                                                                  'the  '
+                                                                  'cluster is '
+                                                                  '100%.',
+                                                   'runbook_url': 'https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/AlertmanagerClusterFailedToSendAlerts.md',
+                                                   'summary': 'All '
+                                                              'Alertmanager '
+                                                              'instances in a '
+                                                              'cluster failed '
+                                                              'to send '
+                                                              'notifications '
+                                                              'to a critical '
+                                                              'integration.'},
+                                   'endsAt': '0001-01-01T00:00:00Z',
+                                   'fingerprint': '3b4f8e53678a8f55',
+                                   'generatorURL': 'https://console-openshift-console.apps.hackathon.ocp4.testing.ansible.com/monitoring/graph?g0.expr=min+by+%28namespace%2C+service%2C+integration%29+%28rate%28alertmanager_notifications_failed_total%7Bintegration%3D~%22.%2A%22%2Cjob%3D~%22alertmanager-main%7Calertmanager-user-workload%22%7D%5B5m%5D%29+%2F+rate%28alertmanager_notifications_total%7Bintegration%3D~%22.%2A%22%2Cjob%3D~%22alertmanager-main%7Calertmanager-user-workload%22%7D%5B5m%5D%29%29+%3E+0.01&g0.tab=1',
+                                   'labels': {'alertname': 'AlertmanagerClusterFailedToSendAlerts',
+                                              'integration': 'webhook',
+                                              'namespace': 'openshift-monitoring',
+                                              'openshift_io_alert_source': 'platform',
+                                              'prometheus': 'openshift-monitoring/k8s',
+                                              'service': 'alertmanager-main',
+                                              'severity': 'warning'},
+                                   'startsAt': '2024-08-20T15:58:57.886Z',
+                                   'status': 'firing'}],
+                       'commonAnnotations': {},
+                       'commonLabels': {'namespace': 'openshift-monitoring',
+                                        'openshift_io_alert_source': 'platform',
+                                        'prometheus': 'openshift-monitoring/k8s',
+                                        'severity': 'warning'},
+                       'externalURL': 'https://console-openshift-console.apps.hackathon.ocp4.testing.ansible.com/monitoring',
+                       'groupKey': '{}/{severity=~"warning|critical"}:{namespace="openshift-monitoring"}',
+                       'groupLabels': {'namespace': 'openshift-monitoring'},
+                       'receiver': 'joe',
+                       'status': 'firing',
+                       'truncatedAlerts': 0,
+                       'version': '4'}}}
+
+** 2024-08-20 16:01:15.842556 [event] ******************************************
+{'meta': {'eda_webhook_name': 'Alertmanager',
+          'endpoint': '/api/eda/v1/external_webhook/8d0543b9-5e6a-415d-806c-413c430fef4a/post/',
+          'headers': {'Accept-Encoding': 'gzip',
+                      'Connection': 'close',
+                      'Content-Length': '2878',
+                      'Content-Type': 'application/json',
+                      'Forwarded': 'for=35.241.237.39;host=aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com;proto=https',
+                      'Host': 'aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com',
+                      'User-Agent': 'Alertmanager/0.25.0',
+                      'X-Envoy-Expected-Rq-Timeout-Ms': '30000',
+                      'X-Envoy-External-Address': '10.131.0.5',
+                      'X-Envoy-Original-Path': '/api/eda/v1/external_webhook/8d0543b9-5e6a-415d-806c-413c430fef4a/post/',
+                      'X-Forwarded-For': '35.241.237.39,10.131.0.5, '
+                                         '10.128.9.16',
+                      'X-Forwarded-Host': 'aap-eda-25-hackathon-5.apps.tthonone.eng.ansible.com',
+                      'X-Forwarded-Port': '8000',
+                      'X-Forwarded-Proto': 'http',
+                      'X-Request-Id': 'a7277a77-02b9-4846-8393-8f93aa3a7397',
+                      'X-Trusted-Proxy': '1724169675646610356-730d2c9f07abfa5993dffcecb02e0f48bb8f457bc653461c75044ed2dd66fda6eadfb4064f0e488fcbd3bb36db1ad161ede2367e1a959a16d9530ac34afb3cb6d3c07517526502b6661835423a651bd4e88cd3ee630418b0b4c9373cdfe3a0add490585868c83c2e9b515dab734e12561cb2329a381d97f2e36b00824d7c004fd03d1a4ac8f7a5e8d956beadc3b61cb3f3e3bcadfa621ac387fad4d52be1e05ee28f456176a797d1b717cf5aae56ab257aeb57b5bbd52df8d393a66b32020019d750fc0114fc1c3a87202391b18c642bd341bb77114ab3c8d403abe33b20cf94b0ef68cbe5f010a5c4ca906cd06407cb8c887617148f93bd1ee19ce7510fb314'},
+          'received_at': '2024-08-20T16:01:15.838335Z',
+          'source': {'name': 'Alertmanager', 'type': 'ansible.eda.pg_listener'},
+          'uuid': 'e7578b28-b0c5-483e-8e10-1bd8cda9baf9'},
+ 'payload': {'alerts': [{'annotations': {'description': 'System load per core '
+                                                        'at '
+                                                        'hackathon-vdtgk-master-0.c.ansible-tower-engineering.internal '
+                                                        'has been above 2 for '
+                                                        'the last 15 minutes, '
+                                                        'is currently at '
+                                                        '4.20.\n'
+                                                        'This might indicate '
+                                                        'this instance '
+                                                        'resources saturation '
+                                                        'and can cause it '
+                                                        'becoming '
+                                                        'unresponsive.\n',
+                                         'summary': 'System saturated, load '
+                                                    'per core is very high.'},
+                         'endsAt': '0001-01-01T00:00:00Z',
+                         'fingerprint': '2509b703dc167f30',
+                         'generatorURL': 'https://console-openshift-console.apps.hackathon.ocp4.testing.ansible.com/monitoring/graph?g0.expr=node_load1%7Bjob%3D%22node-exporter%22%7D+%2F+count+without+%28cpu%2C+mode%29+%28node_cpu_seconds_total%7Bjob%3D%22node-exporter%22%2Cmode%3D%22idle%22%7D%29+%3E+2&g0.tab=1',
+                         'labels': {'alertname': 'NodeSystemSaturation',
+                                    'container': 'kube-rbac-proxy',
+                                    'endpoint': 'https',
+                                    'instance': 'hackathon-vdtgk-master-0.c.ansible-tower-engineering.internal',
+                                    'job': 'node-exporter',
+                                    'namespace': 'openshift-monitoring',
+                                    'openshift_io_alert_source': 'platform',
+                                    'pod': 'node-exporter-z8kbw',
+                                    'prometheus': 'openshift-monitoring/k8s',
+                                    'service': 'node-exporter',
+                                    'severity': 'warning'},
+                         'startsAt': '2024-08-20T11:35:44.012Z',
+                         'status': 'firing'},
+                        {'annotations': {'description': 'The minimum '
+                                                        'notification failure '
+                                                        'rate to webhook sent '
+                                                        'from any instance in '
+                                                        'the  cluster is 100%.',
+                                         'runbook_url': 'https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/AlertmanagerClusterFailedToSendAlerts.md',
+                                         'summary': 'All Alertmanager '
+                                                    'instances in a cluster '
+                                                    'failed to send '
+                                                    'notifications to a '
+                                                    'critical integration.'},
+                         'endsAt': '0001-01-01T00:00:00Z',
+                         'fingerprint': '3b4f8e53678a8f55',
+                         'generatorURL': 'https://console-openshift-console.apps.hackathon.ocp4.testing.ansible.com/monitoring/graph?g0.expr=min+by+%28namespace%2C+service%2C+integration%29+%28rate%28alertmanager_notifications_failed_total%7Bintegration%3D~%22.%2A%22%2Cjob%3D~%22alertmanager-main%7Calertmanager-user-workload%22%7D%5B5m%5D%29+%2F+rate%28alertmanager_notifications_total%7Bintegration%3D~%22.%2A%22%2Cjob%3D~%22alertmanager-main%7Calertmanager-user-workload%22%7D%5B5m%5D%29%29+%3E+0.01&g0.tab=1',
+                         'labels': {'alertname': 'AlertmanagerClusterFailedToSendAlerts',
+                                    'integration': 'webhook',
+                                    'namespace': 'openshift-monitoring',
+                                    'openshift_io_alert_source': 'platform',
+                                    'prometheus': 'openshift-monitoring/k8s',
+                                    'service': 'alertmanager-main',
+                                    'severity': 'warning'},
+                         'startsAt': '2024-08-20T15:58:57.886Z',
+                         'status': 'firing'}],
+             'commonAnnotations': {},
+             'commonLabels': {'namespace': 'openshift-monitoring',
+                              'openshift_io_alert_source': 'platform',
+                              'prometheus': 'openshift-monitoring/k8s',
+                              'severity': 'warning'},
+             'externalURL': 'https://console-openshift-console.apps.hackathon.ocp4.testing.ansible.com/monitoring',
+             'groupKey': '{}/{severity=~"warning|critical"}:{namespace="openshift-monitoring"}',
+             'groupLabels': {'namespace': 'openshift-monitoring'},
+             'receiver': 'joe',
+             'status': 'firing',
+             'truncatedAlerts': 0,
+             'version': '4'}}
+********************************************************************************

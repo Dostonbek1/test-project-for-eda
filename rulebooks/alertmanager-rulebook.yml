@@ -11,10 +11,10 @@
       condition: event.payload.status == "firing"
       actions:
         - run_job_template:
-          organization: Default
-          name: "Demo Job Template"
-          job_args:
-            extra_vars:
-              job_template_name: "Demo Job Template"
+            organization: Default
+            name: "Demo Job Template"
+            job_args:
+              extra_vars:
+                job_template_name: "Demo Job Template"
         - print_event:
             pretty: true
