@@ -2,6 +2,7 @@
 - name: Run a webhook listener service
   hosts: localhost
   sources:
+    - name: webhook_listener
     - ansible.eda.webhook:
   rules:
     - name: Webhook event
