@@ -9,4 +9,5 @@
   rules:
     - name: Webhook event
       condition: event is not None
-      action: none
+      action:
+        none:
