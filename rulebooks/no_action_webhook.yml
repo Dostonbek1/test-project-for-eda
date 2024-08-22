@@ -7,8 +7,7 @@
     - name: Webhook event
       condition: event.payload.ping == "pong"
       action:
-        debug:
-          msg: "Webhook triggered!"
+        none:
 
     - name: Shutdown
       condition: event.payload.shutdown is defined
