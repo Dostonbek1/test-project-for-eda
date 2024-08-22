@@ -10,5 +10,3 @@
     - name: Webhook event
       condition: event is not None
       action:
-        debug:
-          msg: event
