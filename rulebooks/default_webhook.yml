@@ -1,0 +1,11 @@
+---
+- name: Run a webhook listener service
+  hosts: localhost
+  sources:
+    - ansible.eda.webhook:
+  rules:
+    - name: Webhook event
+      condition: event is not None
+      action:
+        debug:
+          msg: event
