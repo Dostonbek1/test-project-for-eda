@@ -3,7 +3,7 @@
   hosts: localhost
   sources:
     - name: webhook_listener
-    - ansible.eda.webhook:
+      ansible.eda.webhook:
   rules:
     - name: Webhook event
       condition: event is not None
